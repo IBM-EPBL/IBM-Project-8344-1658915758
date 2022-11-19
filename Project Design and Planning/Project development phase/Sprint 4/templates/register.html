@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+<form id="survey-form" action="{{ url_for('register')}}" method="post">
+    <h1 id="title">Sign Up</h1>
+    <fieldset id="content">
+        <legend>Please fill in this form to create an account.</legend>
+        <div class="form-element">
+            <label id="name">Name</label>
+            <input class="form-con"
+                   id="name"
+                   name="name"
+                   type="text"
+                   placeholder="Enter your name"
+                   required
+            />
+        </div>
+        <div class="form-element">
+            <label id="email">Email</label>
+            <input class="form-con"
+                   id="email"
+                   name="Email"
+                   type="text"
+                   placeholder="Enter Email"
+                   required
+            />
+        </div>
+
+        <div class="form-element">
+            <label id="phone">Phone Number</label>
+            <input class="form-con"
+                   id="phone"
+                   name="phone"
+                   type="text"
+                   placeholder="Enter Phone Number"
+                   required
+            />
+        </div>
+
+        <div class="form-element">
+            <label id="password">Password</label>
+            <input class="form-con"
+                   id="password"
+                   name="password"
+                   type="password"
+                   placeholder="Enter Password"
+                   required
+            />
+        </div>
+
+        <div class="form-element">
+            <label id="confrim password"> Repeat Password</label>
+            <input class="form-con"
+                   id="confrim password"
+                   name="confrim password"
+                   type="password"
+                   placeholder="Repeat Password"
+                   required
+            />
+        </div>
+    </fieldset>
+    <div>
+    <button type="Sign Up" id="submit"><a href="{{ url_for('login') }}">Sign Up</a></button>
+</div>
+</form>
+
+</body>
+</html>
+
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,300&family=Rubik:wght@300&display=swap');
+*,*::before,*::after{
+font-family: 'Rubik', sans-serif;
+color:white;
+box-sizing:border-box;
+width: 100%;
+padding: 20px;
+}
+body{
+    margin-top:6vh;
+    background-image:url("https://okcredit-blog-images-prod.storage.googleapis.com/2020/09/moneylending-1.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:relative;
+
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 2.6;
+  color:orangered;
+}
+p {
+  font-size: 1.65rem;
+}
+h1,p {
+  text-align:center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+a{
+    text-decoration:none;
+}
+label{
+  line-height:2.5rem;
+  font-size:25px;
+}
+input{
+  color:black;
+  font-weight:600;
+}
+input[type="checkbox"]{
+  min-height:1.1rem;
+  min-width:1.1rem;
+}
+input[type="radio"]{
+  min-height:1.3rem;
+  min-width:1.3rem;
+}
+select,option{
+  color:black;
+  font-weight:600;
+  text-align:start;
+  width:100%;
+  height:35px;
+  border-radius:5px;
+}
+option{
+  font-size:1.013rem;
+}
+textarea{
+  min-width:100%;
+  min-height:150px;
+  color:black;
+  font-weight:600;
+  border-radius:5px;
+}
+textarea::placeholder{
+  padding-left:10px;
+  font-size:1.031rem;
+}
+textarea:focus{
+ outline:3px solid orangered;
+}
+select:focus{
+  outline:3px solid orangered;
+}
+select{
+    font-size:1.013rem;
+    color:grey;
+    padding-left:13px;
+}
+#survey-form{
+  background:rgb(0,0,0,0.7);
+  min-height:180vh;
+  margin:10vh auto;
+  max-width:750px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+}
+#content{
+  width:90%;
+  min-height:140vh;
+  margin:1.13rem auto;
+  display:grid;
+  grid-template-columns:100%;
+  grid-gap:1.5rem;
+  justify-items:center;
+  border-radius:10px;
+}
+.form-element{
+  width:90%;
+  display:block;
+}
+.form-con{
+  width:100%;
+  height:35px;
+  border:none;
+  border-radius:5px;
+}
+.form-con::placeholder{
+    font-size:1.013rem;
+    padding-left:15px;
+    font-weight:600;
+  }
+.form-con:focus{
+  outline:3px solid orangered;
+}
+.long{
+  line-height:1.6rem;
+}
+.check{
+  min-height:1.013rem;
+  min-width:1.013rem;
+}
+#submit{
+  background: linear-gradient(-60deg,orangered,black,orangered);
+  width:90%;
+  border-radius:5px;
+  min-height:2.031rem;
+  border:none;
+  font-weight:600;
+  letter-spacing:0.1rem;
+  cursor:pointer;
+  margin-bottom:6vh;
+  font-size:1.031rem;
+  background-size: 250% 250%;
+  animation:hover-effect 5s ease infinite;
+}
+#submit:hover{
+  outline:3px solid white;
+}
+#submit:focus{
+  animation:hover-effect 5s ease infinite;
+  outline:3px solid orangered;
+}
+textarea,select{
+    margin-top:1vh;
+ }
+@keyframes hover-effect{
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media(max-width:900px){
+  #content,#survey-form{
+    max-width:650px;
+  }
+  #content{
+    margin:auto;
+    max-width:500px;
+  }
+  #submit{
+    max-width:500px;
+    margin:7vh 0;
+  }
+}
+@media(max-width:500px){
+  .long{
+    line-height:2.0rem;
+  }
+  h1{
+    font-size:1.7rem;
+  }
+  p{
+    font-size:1.3rem;
+  }
+  textarea,select{
+    margin-top:8px;
+  }
+  *{
+    font-size:1.031rem;
+    margin:auto 0;
+  }
+}
+
+</style>
